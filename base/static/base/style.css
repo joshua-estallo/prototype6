@@ -1,0 +1,247 @@
+/* GENERAL CSS */
+body {
+  background-color: #333;
+  color: white;
+}
+
+/* NAV CSS */
+
+header {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header nav {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 20px 0px;
+}
+
+header nav input {
+  border: 1px solid white;
+  border-radius: 25px;
+  width: 300px;
+  padding: 8px;
+  background-color: white;
+  color: black;
+}
+
+input::placeholder {
+  color: #444;
+}
+
+/* HOME CSS */
+main {
+  margin: auto 0px;  
+}
+
+.container {
+  display: flex;
+  margin: 0px auto;  
+
+  width: 90%;
+}
+
+.filter {
+  flex: 1;
+}
+
+.content {
+  flex: 3;
+}
+
+
+.content .browse-upload-text {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container .filter {
+  margin: 0px auto;
+  /* border-right: 2px solid white; */
+  margin-right: 15px ;
+  /* border: 1px solid blue; */
+}
+
+.filter .filter-text {
+  text-align: center;
+}
+
+.content .browse{
+  text-align: center;
+}
+
+.content .datasetss {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.filter .types {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter .types > * {
+  width: 65%;
+  text-align: center;
+  border: .1px solid #eee;
+  border-radius: 5px;
+  padding: 10px ;
+  margin-top: 18px;
+}
+
+.pagination {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.datatype {
+  text-align: center;
+  border: 1px solid white;
+  padding: 15px;
+}
+
+.data {
+  width: 80%;
+  padding-bottom: 5px;
+  /* border-bottom: 1px solid white; */
+}
+
+.data .title {
+  font-size: 21px;
+  margin: 11px 0px;
+}
+
+/* DATASET CSS */
+
+.main-dataset .container {
+  display: flex;  
+  justify-content: space-between;
+}
+
+.container .left {
+  width: 60%;
+}
+
+.container .right {
+  width: 30%;
+}
+
+.left .information {
+  padding: 10px;
+  /* border: 1px solid white; */
+}
+.left .information > * {
+  padding: 10px;
+  margin-bottom: 17px;
+  border: 1px solid white;
+}
+
+p {
+  /* font-size: 100px; */
+}
+
+.right .top {
+  text-align: center;
+  margin-bottom: 50px;
+  border: 1px solid white;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.right .bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right .top .recommended-text {
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+}
+
+.cite, .download {
+  text-align: center;
+  width: 100%;
+  border: 2px solid white;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+/* citation popup */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 2px solid green;
+  z-index: 10;
+  background-color: white;
+  color: black;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 200ms ease-in-out;
+
+}
+
+.modal-header {
+  display:  flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.modal-header .close-button{
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+ 
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* end cite popup */
+
+/* recs */
+
+.rec {
+  margin-top: 20px;
+}
+
+/* UPLOAD CSS */

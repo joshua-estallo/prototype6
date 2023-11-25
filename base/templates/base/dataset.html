@@ -1,0 +1,65 @@
+{% extends "base/default.html" %}
+
+{% block content %}
+{% load static %}
+<main class="main-dataset">
+  <div class="container">
+    <div class="left">
+      <div style="text-align: center;">
+        DATASETS INFORMATION
+      </div>
+      <div class="information">
+        <div class="title">
+          <p>TITLE</p>
+          <p>{{ dataset.title }}</p>
+        </div>
+        <div class="description">
+          <p>DESCRIPTION:</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic tenetur vel nobis iusto quos? Ipsam.</p>
+        </div>
+        <div class="categories">
+          <p>CATEGORIES:</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic tenetur vel nobis iusto quos? Ipsam.</p>
+        </div>
+        <div class="author">
+          <p>AUTHOR:</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic tenetur vel nobis iusto quos? Ipsam.</p>
+        </div>
+        <div class="research">
+          <p>THIS DATASET WAS UTILIZED ON THIS RESEARCH:</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic tenetur vel nobis iusto quos? Ipsam.</p>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="top">
+        <p class="recommended-text">RECOMMENDED DATASETS</p>
+        <div>
+          {% for similar_dataset in similar_datasets %}
+          <a href="/dataset/{{ similar_dataset.id }}" class="rec">
+            <p class="rec">{{ similar_dataset.title }} - data type</p>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="bottom">
+        <button class="download-button download"><a href="">No file uploaded</a></button>
+        <button data-modal-target="#modal" class="cite">Cite</button>
+        <div class="modal" id="modal">
+          <div class="modal-header">
+            <div></div>
+            <div class="title" id="copyButton">Copy Citation</div>
+            <button data-close-button class="close-button">&times;</button>
+          </div>
+          <div class="modal-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores expedita id, quasi, ipsum blanditiis consectetur dolorem illo inventore nobis nesciunt, quia illum. Modi vero delectus ea quod quaerat recusandae libero.
+          </div>
+        </div>
+        <div id="overlay"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="{% static 'base/index.js' %}"></script>
+{% endblock %}
